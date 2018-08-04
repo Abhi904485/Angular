@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../script/angular.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    Order by:<select ng-model="sort_coloum">
+            <option value="name">Name ASC</option>
+            <option value="-age">Age DSC</option>
+            <option value="+dateofbirth">DOB ASC</option>
+            <option value="-salary">Salary DSC</option>
+            </select>
+
+    <table vspace="5px" border="1 px solid">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date Of Birth</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <tbody>
+            <tr ng-repeat="employee in employees | orderBy:sort_coloum">
+              <td>{{employee.name | uppercase}}</td>
+              <td>{{employee.dateofbirth | date:"dd:MM:yyyy"}}</td>
+              <td>{{employee.age| number}}</td>
+              <td>{{employee.salary | currency:"RS"}}</td>
+            </tr>
+          </tbody>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+
+</html>

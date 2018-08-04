@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Custom filter</title>
+  <script src="../script/angular.js"></script>
+  <script src="script.js"></script>
+  <script src="filter.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    <table border="1 px solid">
+      <thead>
+        <tr>
+          <th ng-click="sort_data('name')">Name
+            <div ng-class="get_sort_class('name')"></div>
+          </th>
+          <th ng-click="sort_data('dateofbirth')">Date Of Birth
+            <div ng-class="get_sort_class('dateofbirth')"></div>
+          </th>
+          <th ng-click="sort_data('age')">Age
+            <div ng-class="get_sort_class('age')"></div>
+          </th>
+          <th ng-click="sort_data('salary')">Salary
+            <div ng-class="get_sort_class('salary')"></div>
+          </th>
+          <th ng-click="sort_data('gender')">Gender
+            <div ng-class="get_sort_class('gender')"></div>
+          </th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="employee in employees| orderBy:sort_column:reverse_sort | filter:my_filter">
+              <td>{{employee.name | uppercase}}</td>
+              <td>{{employee.dateofbirth | date:"dd/MM/yyyy"}}</td>
+              <td>{{employee.age| number}}</td>
+              <td>{{employee.salary | currency:"RS"}}</td>
+              <td>{{employee.gender | gender}}</td>
+            </tr>
+          </tbody>
+        </tr>
+    </table>
+  </div>
+</body>
+
+</html>

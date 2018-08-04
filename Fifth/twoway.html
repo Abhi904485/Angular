@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Two way Data Binding</title>
+  <script src="../uncompressed_angular/angular.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    <table>
+      <tr>
+        <td>country name</td>
+        <td><input type="text" ng-model="country.name"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>country capital</td>
+        <td><input type="text" ng-model="country.capital"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>country language</td>
+        <td><input type="text" ng-model="country.language"></input>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>country name</td>
+        <td>{{country.name}}</td>
+      </tr>
+      <tr>
+        <td>country capital</td>
+        <td>{{country.capital}}</td>
+      </tr>
+      <tr>
+        <td>country language</td>
+        <td>{{country.language}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
