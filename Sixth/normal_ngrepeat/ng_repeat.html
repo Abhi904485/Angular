@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NG Repeat</title>
+  <script src="../../script/angular.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    <table border="1px">
+      <thead>
+        <tr>
+          <th>Employee Firstname</th>
+          <th>employee lastname</th>
+          <th>employee gender</th>
+          <th>employee salary</th>
+          <tbody>
+            <tr ng-repeat="employee in employees">
+              <td>{{employee.fname}}</td>
+              <td>{{employee.lname}}</td>
+              <td>{{employee.gender}}</td>
+              <td>{{employee.salary}}</td>
+            </tr>
+          </tbody>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../script/angular.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    <table border="1 px solid">
+      Number of rows = <input type="step" ng-model="limit" max="4" min="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Likes</th>
+          <th>DisLikes</th>
+          <th>Likes/Dislikes</th>
+          <tbody>
+            <tr ng-repeat="technology in technologies | limitTo:limit">
+              <td>{{technology.name}}</td>
+              <td>{{technology.likes}}</td>
+              <td>{{technology.dislikes}}</td>
+              <td align="center"><input type="button" value="Likes" ng-click="increment_likes(technology)">
+                <input type="button" value="DisLikes" ng-click="increment_dislikes(technology)"></td>
+            </tr>
+          </tbody>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+
+</html>
