@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anchor Scroll With Data</title>
+  <script src="../script/angular.js" charset="utf-8"></script>
+  <script src="script.js" charset="utf-8"></script>
+  <style media="screen">
+    div {
+      height: 200px;
+      display: block;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body ng-controller="mycontroller">
+
+  <span ng-repeat="country in countries">
+      <button ng-click = scrollTo(country.name)>{{country.name}}</button>
+    </span>
+  <br/>
+  <br/>
+  <div>
+    <fieldset>
+      <fieldset ng-repeat="country in countries" id="{{country.name}}">
+        <legend>{{country.name}}</legend>
+        <ul ng-repeat="city in country.cities">
+          <li>{{city.name}}</li>
+        </ul>
+      </fieldset>
+    </fieldset>
+  </div>
+</body>
+
+</html>
