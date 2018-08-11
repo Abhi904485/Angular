@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../script/angular.js"></script>
+  <script src="script.js"></script>
+  <script src="service.js" charset="utf-8"></script>
+  <title>Angular Service Example</title>
+  <style media="screen">
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      margin: 2px
+       padding: 2px
+    }
+  </style>
+</head>
+
+<body ng-controller="mycontroller">
+  <table border = "1px" >
+    <tr>
+      <th>Your string</th>
+      <td><input type="text" ng-model="input"></td>
+    </tr>
+    <tr>
+      <th>After Transformation</th>
+      <td><input type="text" ng-model="output"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align = "center"><button ng-click="onsubmit(input)">Submit</button></td>
+    </tr>
+
+  </table>
+
+</body>
+
+</html>
