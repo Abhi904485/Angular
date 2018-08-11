@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../../script/angular.js" charset="utf-8"></script>
+  <script src="script.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div ng-controller="mycontroller">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Employee ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in employees">
+          <td>{{employee.id}}</td>
+          <td>{{employee.first_name}}</td>
+          <td>{{employee.last_name}}</td>
+          <td>{{employee.employee_id}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br/>
+
+
+  </div>
+</body>
+
+</html>
