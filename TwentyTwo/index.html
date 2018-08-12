@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>N.L.K Group Of Schools</title>
+  <link rel="stylesheet" href="Style/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js" charset="utf-8"></script>
+  <script src="Script/script.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td colspan="2" class="header">
+        <h1>NLK Group OF Schools</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="leftmenu">
+        <a href="#/home">Home</a>
+        <a href="#/courses">Courses</a>
+        <a href="#/students">Student</a>
+      </td>
+      <td class="maincontent">
+        <ng-view></ng-view>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="footer">Footer Content</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
